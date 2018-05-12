@@ -702,7 +702,8 @@ body .mat-select-trigger {
 .home-fancy-card {
   border-top: 2px solid #212121;
   transition: all 0.3s ease;
-  height: 650px;
+  min-height: 670px;
+  max-height: 670px;
 }
 
 .home-fancy-card:hover {
@@ -756,5 +757,10 @@ body .mat-select-trigger {
     height: 100px;
     width: 100px;
     font-size: 100px;
+  }
+  .home-fancy-card {
+    max-height: auto !important;
+    min-height: auto;
+    height: auto;
   }
 }
