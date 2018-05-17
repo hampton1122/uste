@@ -1,39 +1,40 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import {
-  MatIconModule,
-  MatCardModule,
-  MatMenuModule,
   MatButtonModule,
+  MatCardModule,
   MatChipsModule,
-  MatListModule,
+  MatDialogModule,
+  MatIconModule,
   MatInputModule,
+  MatListModule,
+  MatMenuModule,
   MatRippleModule,
   MatSlideToggleModule,
-  MatSnackBarModule
+  MatSnackBarModule,
 } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule } from '@angular/router';
 import { NguCarouselModule } from '@ngu/carousel';
+
 import { CommonDirectivesModule } from '../../directives/common/common-directives.module';
-import { HomeRoutes } from './home.routing';
-
-import { HomeComponent } from './home.component';
-import { HeaderComponent } from './header/header.component';
-import { IntroComponent } from './intro/intro.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { ServicesComponent } from './services/services.component';
-import { CtaComponent } from './cta/cta.component';
-import { PricingsComponent } from './pricings/pricings.component';
-import { ContactComponent } from './contact/contact.component';
-import { FooterComponent } from './footer/footer.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
-import { PortfolioCarouselComponent } from './portfolio-carousel/portfolio-carousel.component';
-import { TestimonialsCarouselComponent } from './testimonials-carousel/testimonials-carousel.component';
-import { ServicesCarouselComponent } from './services-carousel/services-carousel.component';
-
 import { WINDOW_PROVIDERS } from '../../helpers/window.helper';
+import { ContactComponent } from './contact/contact.component';
+import { CtaComponent } from './cta/cta.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home.component';
+import { HomeRoutes } from './home.routing';
+import { ImageDialogComponent } from './image-dialog/image-dialog.component';
+import { IntroComponent } from './intro/intro.component';
+import { PortfolioCarouselComponent } from './portfolio-carousel/portfolio-carousel.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PricingsComponent } from './pricings/pricings.component';
+import { ServicesCarouselComponent } from './services-carousel/services-carousel.component';
+import { ServicesComponent } from './services/services.component';
+import { TestimonialsCarouselComponent } from './testimonials-carousel/testimonials-carousel.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { WINDOW_PROVIDERS } from '../../helpers/window.helper';
     MatChipsModule,
     MatInputModule,
     MatListModule,
+    MatDialogModule,
     MatRippleModule,
     MatSlideToggleModule,
     MatSnackBarModule,
@@ -62,6 +64,7 @@ import { WINDOW_PROVIDERS } from '../../helpers/window.helper';
     PortfolioComponent,
     ServicesComponent,
     CtaComponent,
+    ImageDialogComponent,
     PricingsComponent,
     ContactComponent,
     FooterComponent,
@@ -70,6 +73,7 @@ import { WINDOW_PROVIDERS } from '../../helpers/window.helper';
     TestimonialsCarouselComponent,
     ServicesCarouselComponent
   ],
+  entryComponents: [ImageDialogComponent],
   providers: [WINDOW_PROVIDERS]
 })
 export class HomeModule {}

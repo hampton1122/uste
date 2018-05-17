@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import { NguCarousel } from '@ngu/carousel';
+
+import { ImageDialogComponent } from '../image-dialog/image-dialog.component';
 
 @Component({
   selector: 'app-portfolio-carousel',
@@ -8,54 +11,86 @@ import { NguCarousel } from '@ngu/carousel';
 })
 export class PortfolioCarouselComponent implements OnInit {
   @Input('backgroundGray') public backgroundGray;
-  
+
   public carouselOptions: NguCarousel;
-  public portfolios = [{
-    photo: 'assets/images/sq-10.jpg',
-    text: `Adipisci quas repellat sed. Quasi quaerat aut nam possimus 
-    vitae dignissimos, sapiente est atque tenetur`,
-    title: 'Project One',
-  }, {
-    photo: 'assets/images/sq-11.jpg',
-    text: `Adipisci quas repellat sed. Quasi quaerat aut nam possimus 
-    vitae dignissimos, sapiente est atque tenetur`,
-    title: 'Project Two',
-  }, {
-    photo: 'assets/images/sq-12.jpg',
-    text: `Adipisci quas repellat sed. Quasi quaerat aut nam possimus 
-    vitae dignissimos, sapiente est atque tenetur`,
-    title: 'Project Three',
-  }, {
-    photo: 'assets/images/sq-13.jpg',
-    text: `Adipisci quas repellat sed. Quasi quaerat aut nam possimus 
-    vitae dignissimos, sapiente est atque tenetur`,
-    title: 'Project Four',
-  }, {
-    photo: 'assets/images/sq-15.jpg',
-    text: `Adipisci quas repellat sed. Quasi quaerat aut nam possimus 
-    vitae dignissimos, sapiente est atque tenetur`,
-    title: 'Project Five',
-  }, {
-    photo: 'assets/images/sq-16.jpg',
-    text: `Adipisci quas repellat sed. Quasi quaerat aut nam possimus 
-    vitae dignissimos, sapiente est atque tenetur`,
-    title: 'Project Six',
-  }]
-  constructor() { }
+  public portfolios = [
+    {
+      photo: 'assets/images/1.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/2.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/3.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/4.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/5.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/6.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/7.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/8.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/9.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/10.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/11.jpg',
+      title: 'Sample Title'
+    }
+  ];
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {
     this.carouselOptions = {
       grid: { xs: 1, sm: 2, md: 3, lg: 3, all: 0 },
       slide: 2,
       speed: 400,
-      interval: 4000,
+      interval: 5000,
       point: {
         visible: true
       },
       load: 2,
       touch: true,
-      loop: true
-    }
+      loop: false
+    };
   }
 
+  openDialog(photo: string) {
+    let height = '600px';
+    let width = '800px';
+
+    if (window.innerWidth > 800 && window.innerHeight > 600) {
+      const dialogRef = this.dialog.open(ImageDialogComponent, {
+        height,
+        width,
+        data: photo,
+        disableClose: false
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+  }
 }
