@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -17,5 +18,14 @@ export class ContactComponent implements OnInit {
       subject: ['', [Validators.required]],
       message: ['', Validators.required]
     });
+  }
+  submitForm() {
+    if (this.contactForm.valid) {
+      const name = this.contactForm.controls.name.value;
+      const emailTo = this.contactForm.controls.email.value;
+      const subject = this.contactForm.controls.subject.value;
+      const message = this.contactForm.controls.message.value;
+      // send email to backend
+    }
   }
 }

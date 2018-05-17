@@ -4,7 +4,7 @@
       <h2>Send Us An Email</h2>
       <p>We look forward to hearing from you. Please complete the short form below and we will get in touch with you shortly.</p>
     </div>
-    <form [formGroup]="contactForm">
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap="wrap">
         <div fxFlex="100">
           <div class="pb-1">
