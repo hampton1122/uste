@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   <app-intro></app-intro>
   <app-services></app-services>
   <app-portfolio-carousel></app-portfolio-carousel>
-  <app-testimonials [backgroundGray]="true"></app-testimonials>
   <app-cta></app-cta>
   <app-contact [backgroundGray]="true"></app-contact>
   <app-footer></app-footer>`
