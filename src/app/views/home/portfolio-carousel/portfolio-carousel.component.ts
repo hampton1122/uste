@@ -55,7 +55,39 @@ export class PortfolioCarouselComponent implements OnInit {
       title: 'Sample Title'
     },
     {
-      photo: 'assets/images/11.jpg',
+      photo: 'assets/images/12.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/13.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/14.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/15.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/16.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/17.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/18.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/19.jpg',
+      title: 'Sample Title'
+    },
+    {
+      photo: 'assets/images/20.jpg',
       title: 'Sample Title'
     }
   ];
