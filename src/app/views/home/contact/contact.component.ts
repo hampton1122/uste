@@ -25,7 +25,10 @@ export class ContactComponent implements OnInit {
       const emailTo = this.contactForm.controls.email.value;
       const subject = this.contactForm.controls.subject.value;
       const message = this.contactForm.controls.message.value;
-      // send email to backend
+      document.location.href = `mailto:info@us-extradition.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(message)}`;
+      this.contactForm.reset();
     }
   }
 }
