@@ -3,3 +3,19 @@
     margin: 0 16px;
   }
 }
+
+.mat-card-image:first-child {
+  margin-top: 0;
+}
+
+.mat-card-image {
+  width: calc(100%);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .mat-card-image {
+    width: calc(100%);
+    margin: 0;
+  }
+}
